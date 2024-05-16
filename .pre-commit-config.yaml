@@ -1,0 +1,17 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.3
+    hooks:
+      # Run the linter.
+      - id: ruff
+        files: '\.(py|ipynb)$'
+      # Run the formatter.
+      - id: ruff-format
+        files: '\.(py|ipynb)$'
+  - repo: local
+    hooks:
+      - id: pyright
+        name: pyright
+        entry: pyright
+        language: system
+        files: '\.(py|ipynb)$'
